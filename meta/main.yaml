@@ -1,2 +1,5 @@
 ---
-dependencies: []
+dependencies:
+# This must include the non-free part.
+- role: backports
+- role: linux-headers-amd64
