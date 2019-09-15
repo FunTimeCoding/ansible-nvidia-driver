@@ -1,5 +1,5 @@
 ---
 dependencies:
 # This must include the non-free part.
-- role: backports
+- { role: backports, when: ansible_distribution_release == 'stretch' }
 - role: linux-headers-amd64

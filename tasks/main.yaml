@@ -1,6 +1,11 @@
 ---
 - apt:
     name: nvidia-driver
+  remote_user: root
+  when: ansible_os_family == 'Debian' and ansible_distribution_release != 'stretch'
+
+- apt:
+    name: nvidia-driver
     default_release: stretch-backports
   remote_user: root
-  when: ansible_os_family == 'Debian'
+  when: ansible_os_family == 'Debian' and ansible_distribution_release == 'stretch'
